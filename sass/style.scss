@@ -1,15 +1,17 @@
 /*!
-* Theme Name: HackerYou Starter Theme
-* Theme URI: http://hackeryou.com;
-* Description: Starter theme for building any website. Created by HackerYou. * Rename this to your own theme page.
+* Theme Name: Erika Donovan Project 7 based off the HackerYou Starter Theme
+* Theme URI: http://erikadonovan.com
+* Description: My first them! 
 * Version: 1.0
-* Author: HackerYou
-* Author URI: http://hackeryou.com
+* Author: Erika Donovan // HackerYou
+* Author URI: http://erikadonovan.com
 */
 
 @import 'normalize';
+@import 'variables';
 @import 'typography';
-@import 'navigation';
+@import 'header';
+@import 'pages';
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
@@ -24,11 +26,13 @@ img {
 }
 
 body {
-	color: #333;
+  font-size: 10px;
+  color: $textcolour;
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1000px;
+  width: 80%;
 	margin: 0 auto;
 }
 
@@ -42,7 +46,49 @@ body {
 	width: 100%;
 }
 
+section {
+  padding: 60px 0;
+}
 
+.hero {
+  height: 600px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  &__content {
+    color: white;
+    text-align: center;
+    p {
+      margin: 30px 0;
+    }
+  }
+}
+
+.button {
+  background: white;
+  padding: 10px 20px;
+  color: $grey;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.contact-section article {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+  div {
+    padding: 0 5px;
+  }
+  p {
+    margin: 0;
+  }
+}
 
 
 

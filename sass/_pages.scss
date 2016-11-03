@@ -1,0 +1,94 @@
+#homepage {
+  .process {
+    &__types {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: center;
+      padding: 0;
+      &--item {
+        width: 250px;
+        i {
+          color: $gold;
+        }
+      }
+    }
+    &__title {
+      text-transform: capitalize;
+      font-weight: 700;
+    }
+  }
+  .clients {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    &__testimonials {
+      list-style: none;
+    }
+    &__name {
+      font-style: italic;
+    }
+  }
+}
+
+#about {
+  text-align: center;
+  .hero {
+    &__content {
+      h1 {
+        font-weight: 700;
+      }
+      .button {
+        color: $gold;
+      }
+    }
+  }
+  .whatwedo {
+    text-align: center;
+
+  }
+  .services {
+    background: $white;
+    &__types {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      margin-top: 30px;
+      margin-bottom: 0;
+    }
+    item {
+      display: inline-block;
+      width: 105px;
+    }
+    &--title {
+        text-transform: uppercase;
+        color: $gold;
+        font-family: $linkfont;
+        font-size: 10px;
+    }
+  }
+}
+
+#contact {
+  .form, .contactinfo {
+    float: left;
+    width: calc(50% - 40px);
+    margin: 20px 0;
+  }
+  .contactinfo {
+    p {
+      margin: 0;
+    }
+    &--headline {
+      font-size: 18px;
+      font-weight: 700;
+      color: black;
+    }
+  }
+  
+}

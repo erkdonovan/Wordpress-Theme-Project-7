@@ -1,64 +1,96 @@
 a {
-	color: #BA209B;
-	text-decoration: none;
-	&:hover {
-		color: #D424B1;
-	}
+  color: $gold;
+  text-decoration: none;
+  font-family: $linkfont;
+  font-size: 16px;
+  &:hover {
+    color: $blue;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: $mainfont;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 55px;
+  text-transform: capitalize;
+  margin: 5px 0;
+}
+
+h2 {
+  font-size: 24px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $gold;
 }
 
 /* paragraphs */
 
 p {
-	line-height: 1.5;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 /*blockquotes*/
 
 blockquote {
-	background: #F7F7F7;
-	margin: 0;
-	padding: 20px;
-	p {
-		margin-top: 0;
-	}
+  background: #F7F7F7;
+  margin: 0;
+  padding: 20px;
+  p {
+    margin-top: 0;
+  }
 }
 
 /*tables*/
 
 table {
-	td {
-		padding: 10px;
-	}
-	tr td:first {
-		padding-right: 0;
-	}
+  td {
+    padding: 10px;
+  }
+  tr td:first {
+    padding-right: 0;
+  }
 }
 
 /*def lists*/
 
 dt {
-	font-weight: 600;
-	padding-bottom: 5px;
+  font-weight: 600;
+  padding-bottom: 5px;
 }
 
 dd {
-	padding: 10px;
-	margin-left: 10px;
+  padding: 10px;
+  margin-left: 10px;
 }
 
 /*lists*/
 
 ul li, ol li {
-	padding: 3px;
+  padding: 3px;
 }
 
 /*PRE*/
 
 pre {
-	background: #F7F7F7;
-	padding: 10px;
-	border-radius: 4px;
-	border: 1px solid #ccc;
+  background: #F7F7F7;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
 
@@ -69,29 +101,29 @@ Global Classes / Wordpress Specific
 */
 
 .aligncenter {
-	text-align: center;
-	margin: 0 auto;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .alignleft {
-	float: left;
+  float: left;
 }
 
 .alignright {
-	float: right;
+  float: right;
 }
 
 img {
-	&.alignleft {
-		padding-right: 5px;
-	}
-	&.alignright {
-		padding-left: 5px;
-	}
+  &.alignleft {
+    padding-right: 5px;
+  }
+  &.alignright {
+    padding-left: 5px;
+  }
 }
 
 .clear {
-	width: 100%;
-	float: left;
-	clear: both;
+  width: 100%;
+  float: left;
+  clear: both;
 }
