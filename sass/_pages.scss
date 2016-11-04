@@ -1,3 +1,22 @@
+.team {
+  width: 100%;
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    &--profiles {
+      width: 180px;
+      p, h4 {
+        margin-bottom: 0;
+      }
+      img {
+        border-radius: 50%;
+        width: 100%;
+      }
+    }
+  }
+}
+
 #homepage {
   .process {
     &__types {
@@ -18,7 +37,7 @@
       text-transform: capitalize;
       font-weight: 700;
     }
-  }
+  }  
   .clients {
     background-size: cover;
     background-position: center;
@@ -27,8 +46,24 @@
     &__testimonials {
       list-style: none;
     }
-    &__name {
-      font-style: italic;
+    &__quote {
+      width: 60%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1111;
+      &:before{
+        content: "\f10d";
+        font-family: FontAwesome;
+        color: $gold;
+        opacity: 0.7;
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 27px;
+      }
+      &--name {
+        font-style: italic;
+      }
     }
   }
 }
@@ -66,10 +101,10 @@
       width: 105px;
     }
     &--title {
-        text-transform: uppercase;
-        color: $gold;
-        font-family: $linkfont;
-        font-size: 10px;
+      text-transform: uppercase;
+      color: $gold;
+      font-family: $linkfont;
+      font-size: 10px;
     }
   }
 }
@@ -90,5 +125,115 @@
       color: black;
     }
   }
-  
+  .form {
+    input, textarea {
+      margin: 10px 0;
+      border: dotted grey 2px;
+      padding: 10px;
+      color: $grey;
+      font-size: 12px;
+    }
+    input[type=text], input[type=email], textarea {
+      font-style: italic;
+      width: 90%;
+    }
+    input[type=submit] {
+      background: $gold;
+      border-radius: 20px;
+      color: white;
+      text-transform: uppercase;
+      padding: 10px 25px;
+      border: none;
+    }
+  }
+}
+
+#blog {
+  margin: 65px 0;
+  .blog {
+    border-right: $grey 1px solid;
+    padding-right: 15px;
+    width: calc(70% - 15px);
+    float: left;
+    margin-right: 15px;
+    &__posts {
+      margin-top: 20px;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      &--image {
+        height: 40vh;
+        background-position: center center;
+        background-size: cover;
+      }
+      &--content {
+        border-left: $gold solid 1px;
+        border-right: $gold solid 1px;
+        padding: 20px;
+        h3 {
+          text-align: left;
+          color: $gold;
+          margin: 0;
+        }
+      }
+      &--stats {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        width: 100%;
+        display: flex;
+        a {
+          color: $gold;
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .stat-items {
+          font-size: 10px;
+          padding: 5px 10px;
+          width: 25%;
+          text-align: center;
+          &:last-of-type {
+            border-right: none;
+          }
+          p, a, i {
+            font-size: 10px;
+            color: $gold;
+            margin: 0;
+            text-transform: capitalize;
+            font-weight: 400;
+          }
+          i {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  .pagination {
+    margin-top: 15px;
+  }
+  .entry-title {
+    text-align: left;
+  }
+  .single-content-section {
+    border: $grey 1px solid;
+    padding: 20px;
+  }
+  .single-section-border {
+    border: $grey 1px solid;
+  }
+  .single-stat-border {
+    border-right: $grey 1px solid;
+  }
+  .blog-section-border {
+    border: $gold 1px solid;
+  }
+  .blog-stat-border {
+    border-right: $gold 1px solid;
+  }
 }

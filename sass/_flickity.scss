@@ -1,0 +1,20 @@
+/* big buttons, no circle */
+.flickity-prev-next-button {
+  width: 80px;
+  height: 100px;
+  background: transparent;
+}
+.flickity-prev-next-button:hover {
+  background: transparent;
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: $gold;
+}
+.flickity-prev-next-button.no-svg {
+  color: $gold;
+}
+/* hide disabled button */
+.flickity-prev-next-button:disabled {
+  display: none;
+}

@@ -49,10 +49,25 @@ get_header();  ?>
   </section> <!-- /services -->
 
   <section class="team">
-    <div class="container">
-      THE TEAM GOES HERE
+    <div class="container team__flex">
+      <?php 
+        $args = array('post_type' => 'employees', 'orderby' => 'ID', 'order' => 'ASC');
+        $loop = new WP_Query( $args );
+
+        while ( $loop->have_posts() ) : $loop->the_post();
+        ?>
+        <div class="team__flex--profiles">
+          <?php $employeePhoto = get_field('employee_headshot') ?>
+          <img src="<?php echo $employeePhoto['url'] ?>" alt="<?php echo $employeePhoto['alt'] ?>">
+          <h4><?php the_title(); ?></h4>
+          <p><?php the_field('employee_job_title'); ?>, 
+          <?php the_field('employee_location'); ?></p>
+        </div>
+
+      <?php endwhile; ?> <!-- ends team section -->
+      <?php  wp_reset_postdata(); ?>
     </div> <!-- /.container -->
-  </section> <!-- t/eam -->
+  </section> <!-- /team -->
     
   <?php $contactusImage = get_field('contact_background_imge'); ?>
   <section class="contactus" style="background-image: url(<?php echo $contactusImage['url'] ?>)">

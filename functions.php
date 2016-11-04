@@ -32,7 +32,7 @@ function theme_setup() {
   * adding additional menus to the array. */
   register_nav_menus( array(
     'primary' => 'Primary Navigation',
-    'social' => 'Social Nav'
+    'footer' => 'Footer Navigation'
   ) );
 
   /*
@@ -325,6 +325,17 @@ if( function_exists('acf_add_options_page') ) {
   
 }
 
+function edonovan_featured_image_url($currentPost) {
+    $image_id = get_post_thumbnail_id($currentPost->ID);
+    $image_url = wp_get_attachment_url($image_id);
+    return $image_url;
+}
 
+// Replaces the excerpt "Read More" text by a link
+function new_excerpt_more($more) {
+       global $post;
+  return '<a class="moretag" href="'. get_permalink($post->ID) . '"> Read More...</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 

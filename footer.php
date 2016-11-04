@@ -2,11 +2,21 @@
   <div class="container footer__flex">
     <section class="footer__newsletter">
       <h4><i class="fa fa-envelope-o" aria-hidden="true"></i> Newsletter Signup</h4>
-      <?php the_field('newsletter_form', 'option') ?>
+      <?php $newsLetter = get_field('newsletter_form', 'option');
+          $newsLetter = trim($newsLetter);
+       ?>
+      <?php echo do_shortcode($newsLetter); ?>
+      <nav>
+        <?php wp_nav_menu( array(
+          'container' => false,
+          'theme_location' => 'footer'
+        )); ?>
+      </nav>
     </section>
 
     <section class="footer__tweets">
       <h4><i class="fa fa-twitter" aria-hidden="true"></i> Recent Tweets</h4>
+      <!-- twitter_handle -->
     </section>
 
     <section class="footer__posts">
@@ -28,7 +38,7 @@
       <h4><i class="fa fa-building-o" aria-hidden="true"></i> Main Office</h4>
       <article>
         <div>
-          <i class="fa fa-map-marker" aria-hidden="true">      </i>
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
         </div>
         <div>
           <p>
@@ -58,8 +68,28 @@
       </article>
     </section>
   </div>
+  <div class="container">
+    <div class="social">
+      <?php 
+        while(have_rows('social_repeater', 'option')) : the_row();
+      ?>
+        <?php 
+           // vars
+          $link = get_sub_field('social_link', 'option');
+          $icon = get_sub_field('social_icon', 'option');
+          $alt = get_sub_field('social_alt', 'option');
+        ?>
+        
+        <div class="social__types--item">
+          <a href="</a> <?php echo $link ?>" alt="<?php echo $alt ?>"><i class="fa <?php echo $icon ?>" aria-hidden="true"></i></a>
+        </div>
+
+      <?php endwhile ?> 
+    </div>
+  </div>
 </footer>
 
+<script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
 <script>
 // scripts.js, plugins.js and jquery are enqueued in functions.php
 /* Google Analytics! */

@@ -10,11 +10,10 @@
 @import 'normalize';
 @import 'variables';
 @import 'typography';
-@import 'header';
+@import 'flickity';
+@import 'navigation';
 @import 'pages';
-@import 'sidebar';
 @import 'comments';
-@import 'footer';
 /*
 ====================================
 Default Styling
@@ -90,8 +89,51 @@ section {
   }
 }
 
+.carousel-cell {
+  width: 100%
+}
 
-
-
-
-
+.sidebar {
+  width: 30%;
+  float: left;
+  input {
+    border-radius: 20px;
+    border: 1px solid $grey;
+    padding: 5px 15px;
+  }
+  input[type=submit] {
+    background: $gold;
+    color: white;
+  }
+  h3 {
+    text-transform: uppercase;
+    font-family: $linkfont;
+    font-size: 14px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      ul {
+        li {
+          border-bottom: $grey 1px solid;
+          a {
+            color: $gold;
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+  .tagcloud {
+    a {
+      font-size: 10px !important;
+      border: 1px $gold solid;
+      color: $gold;
+      border-radius: 20px;
+      padding: 5px 10px;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -15,8 +15,10 @@ get_header();  ?>
     <section class="form">
       <h4><?php the_field('contact_us'); ?></h4>
       <div>
-        <?php the_content(); ?>
-        <?php the_field('newsletter_code'); ?>
+        <?php $contactForm = get_field('newsletter_code');
+            $contactForm = trim($contactForm);
+         ?>
+        <?php echo do_shortcode($contactForm); ?>
       </div>
     </section>
 
