@@ -16,8 +16,9 @@
 
     <section class="footer__tweets">
       <h4><i class="fa fa-twitter" aria-hidden="true"></i> Recent Tweets</h4>
-      <!-- twitter_handle -->
+      <a class="twitter-timeline" data-width="220" data-height="250" data-theme="dark" data-link-color="#be946d" href="https://twitter.com/<?php the_field('twitter_handle', 'option') ?>"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </section>
+
 
     <section class="footer__posts">
       <h4><i class="fa fa-pencil" aria-hidden="true"></i> Recent Posts</h4>
