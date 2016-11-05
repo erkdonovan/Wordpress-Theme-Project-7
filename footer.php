@@ -90,6 +90,7 @@
 </footer>
 
 <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIg8C5JxykmCE9DEYezBs7CH-XTxJIqvA"></script>
 <script>
 // scripts.js, plugins.js and jquery are enqueued in functions.php
 /* Google Analytics! */

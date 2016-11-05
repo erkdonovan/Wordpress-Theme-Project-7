@@ -86,11 +86,20 @@ function hackeryou_scripts() {
 
   wp_enqueue_script(
     'scripts', //handle
+    get_template_directory_uri() . '/js/map.js', //source
+    array( 'jquery', 'plugins' ), //dependencies
+    null, // version number
+    true //load in footer
+  );
+  
+  wp_enqueue_script(
+    'scripts', //handle
     get_template_directory_uri() . '/js/main.min.js', //source
     array( 'jquery', 'plugins' ), //dependencies
     null, // version number
     true //load in footer
   );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts');
@@ -337,5 +346,3 @@ function new_excerpt_more($more) {
   return '<a class="moretag" href="'. get_permalink($post->ID) . '"> Read More...</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
-
-

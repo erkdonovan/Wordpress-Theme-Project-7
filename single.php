@@ -42,6 +42,18 @@
             <div class="single-content-section">
               <?php the_content(); ?>
             </div>
+            <div class="author">
+              <div class="author__avatar">
+                <?php echo get_avatar( get_the_author_meta('user_email'), 150); ?>
+              </div>
+              <div class="author__bio">
+                <h3>About <?php the_author(); ?>
+                  </a>
+                </h3>
+                <?php the_author_meta('description'); ?>
+              </div>
+
+            </div>
 
           </div><!-- .entry-content -->
         </div><!-- #post-## -->

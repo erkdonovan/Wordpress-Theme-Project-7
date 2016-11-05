@@ -13,13 +13,15 @@
           <div class="blog__posts--image" style="background-image: url(<?php echo edonovan_featured_image_url($post) ?>);">
           </div>
           <div class="blog__posts--content">
-            <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+            <a href="<?php the_permalink(); ?>">
+              <h3><?php the_title(); ?></h3>
+            </a>
             <?php the_excerpt(); ?>
           </div>
           <div class="blog-section-border blog__posts--stats">
             <div class="stat-items blog-stat-border">
-              <p><i class="fa fa-user" aria-hidden="true"></i></p>
-              <p>Posted by: <?php the_author_meta('nickname'); ?></p>
+              <p><i class="fa fa-user" aria-hidden="true"></i></p> 
+              <p>Posted by: <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a></p>
             </div>
             <div class="stat-items blog-stat-border">
               <p><i class="fa fa-tag" aria-hidden="true"></i></p>

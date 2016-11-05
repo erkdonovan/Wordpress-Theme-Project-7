@@ -8,9 +8,19 @@ get_header();  ?>
 
 <div class="main" id="contact">
   <section class="hero-map">
-    
+    <?php 
+
+    $location = get_field('map');
+
+    if( !empty($location) ):
+    ?>
+    <div class="acf-map">
+      <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+    </div>
+    <?php endif; ?>
+
   </section>
-  <div class="container">
+  <div class="container contact__flex">
 
     <section class="form">
       <h4><?php the_field('contact_us'); ?></h4>

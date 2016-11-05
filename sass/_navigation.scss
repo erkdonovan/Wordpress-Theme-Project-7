@@ -46,6 +46,7 @@ nav {
   color: $white;
   &__flex {
     display: flex;
+    flex-wrap: wrap;
   }
   h4 {
     color: $gold;
@@ -61,7 +62,7 @@ nav {
     color: $darkgrey;
   }
   section {
-    flex: 1 0 200px;
+    flex: 1 0 215px;
     padding: 0 30px;
     ul {
       padding: 0;

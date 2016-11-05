@@ -1,0 +1,28 @@
+@media screen and (max-width: 750px) {
+  .sidebar {
+    display: none;
+  }
+  #blog {
+    .blog {
+    width: 100%;
+    float: none;
+    border: none;
+    }
+  }
+}
+
+@media screen and (max-width: 630px) {
+  nav ul li a {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    width: 90%;
+  }
+
+  #blog .blog {
+    padding-right: 0;
+  }
+}
