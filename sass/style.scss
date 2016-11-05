@@ -149,9 +149,5 @@ section {
    max-width: inherit !important;
 }
 
-// hides the header and the footer from the twitter profile
-.timeline-Header, .timeline-Footer {
-  display: none !important;
-}
 
 @import 'media';
