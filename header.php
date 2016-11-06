@@ -15,7 +15,7 @@
 
 <body <?php body_class(); ?>>
 
-<header id="header" class="clearfix">
+<header id="header" class="lonely-nav">
   <div class="container">
     <div class="logo">
       <?php 
@@ -32,4 +32,3 @@
     </nav>
   </div> <!-- /.container -->
 </header><!--/.header-->
-

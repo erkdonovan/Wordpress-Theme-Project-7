@@ -1,16 +1,54 @@
-<?php get_header();  ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+  <?php // Load Meta ?>
+  <meta charset="<?php bloginfo( 'charset' ); ?>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><?php  wp_title('|', true, 'right'); ?></title>
+  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.css" media="screen">
+  <!-- stylesheets should be enqueued in functions.php -->
+  <?php wp_head(); ?>
+</head>
 
-<div class="main" id="homepage">
-  <?php $heroImage = get_field('hero_image'); ?>
-  <section class="hero" style="background-image: url(<?php echo $heroImage['url'] ?>);">
-    <div class="hero__content">
+
+<body <?php body_class(); ?>>
+
+
+<?php $heroImage = get_field('hero_image'); ?>
+<div class="hero" style="background-image: url(<?php echo $heroImage['url'] ?>);">
+<div class="overlay"></div>
+  <header id="header" class="clearfix">
+    <div class="container">
+      <div class="logo">
+        <?php 
+          $custom_logo_id = get_theme_mod( 'custom_logo' );
+          $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+        ?>
+        <img src="<?php echo $image[0]; ?>" alt="">
+      </div>
+      <nav>
+        <?php wp_nav_menu( array(
+          'container' => false,
+          'theme_location' => 'primary'
+        )); ?>
+      </nav>
+    </div> <!-- /.container -->
+  </header><!--/.header-->
+  <div class="hero__flex">
+    <div class="hero__flex--content">
       <h1><?php the_field('hero_headline'); ?></h1>
       <p><?php the_field('hero_tagline'); ?></p>
       <a href="<?php the_field('button_link'); ?>" class="button">
         <?php the_field('button_text'); ?>
       </a> 
     </div> <!-- /hero__content -->
-  </section> <!-- /hero -->
+  </div>
+</div> <!-- /hero -->
+
+
+<div class="main" id="homepage">
   <section class="process">
     <div class="container">
       <h2><?php the_field('our_process'); ?></h2>
@@ -39,7 +77,7 @@
   <section class="team">
     <div class="container team__flex">
         <?php 
-        $args = array('post_type' => 'employees', 'orderby' => 'ID', 'order' => 'ASC');
+        $args = array('post_type' => 'employees', 'employees-category' => 'higher-management', 'posts_per_page'   => 4);
         $loop = new WP_Query( $args );
 
         while ( $loop->have_posts() ) : $loop->the_post();

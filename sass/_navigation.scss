@@ -13,8 +13,12 @@ nav {
   }
 }
 
-#header {
+.lonely-nav {
   background: #1b1b1b;
+}
+
+#header {
+  position: relative;
   padding: 20px 0;
   .container {
     display: flex;
@@ -35,6 +39,43 @@ nav {
   }
 } /*end of #header*/
 
+.overlay {
+  background: #1b1b1b;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  &__flex {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+    &--content {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      color: white;
+      text-align: center;
+      p {
+        margin: 30px 0;
+      }
+      a {
+        color: $gold;
+      }
+    }
+  }
+}
 
 
 .footer {
