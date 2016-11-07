@@ -54,12 +54,12 @@ nav {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
   &__flex {
     position: relative;
     height: 600px;
     width: 100%;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
     &--content {
       position: absolute;
       top: 40%;
